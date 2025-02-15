@@ -52,7 +52,7 @@ def main():
 
         }
         prediction = predict_data(user_data)
-        user_data['prediction'] = prediction
+        user_data['prediction'] = round(prediction, 2)
         collection.insert_one(user_data)
         
         st.success(f'Your Prediction is {prediction:.2f}')
